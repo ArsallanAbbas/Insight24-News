@@ -1,5 +1,14 @@
 .card-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    justify-content: space-between;
+    row-gap: 35px;
+    padding: 20px;
+    padding-top: 100px;
+}
+
+.hero {
+    color: rgb(215, 215, 215);
+    padding-top: 130px;
+    text-align: center;
 }

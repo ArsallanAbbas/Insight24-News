@@ -1,15 +1,28 @@
 .card {
     display: flex;
     flex-direction: column;
-    width: 350px;
+    width: 450px;
     cursor: pointer;
-    background-color: rgb(246, 250, 254);
-    border-radius: 5px;
-    box-shadow: 5px 5px 10px #838383;
+    background: linear-gradient(black 20%, transparent);
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #000000;
+    color: rgb(215, 215, 215);
+    padding: 15px;
 }
 
-.card img {
-    width: 100%;
-    border-radius: 5px 5px 0 0;
+.card h2 {
+    height: 60px;
+    overflow: hidden;
 }
+
+.card .title {
+    height: 90px;
+    overflow: hidden;
+}
+
+.card h2, .card p {
+    margin-bottom: 15px;
+}
+
+.card 
 

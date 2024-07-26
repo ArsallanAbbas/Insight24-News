@@ -2,6 +2,7 @@ import React from 'react'
 import "./Card.css"
 
 const Card = ({item}) => {
+
   function handleClick () {
     window.open(item.url)
   }
@@ -9,16 +10,13 @@ const Card = ({item}) => {
   return (
     <>
       <div className='card' onClick={handleClick}>
-        <img src={item.urlToImage} alt='atrticle image'/>
-        <div className='container'>
-          <h2>{item.title}</h2>
-          <p>{item.description}</p>
-          <p>{item.source.name}</p>
-          <p>{new Date(item.publishedAt).toLocaleDateString()}</p>
-        </div>  
+        <h2>{item.title}</h2>
+        <p className='title'>{item.description}</p>
+        <p className='item'>Source: {item.source.name}</p>
+        <p className='date'>Published Date: {new Date(item.publishedAt).toLocaleDateString()}</p>
       </div>
     </>
   )
-}
+} 
 
 export default Card

@@ -1,7 +1,33 @@
 .input-field {
     display: block;
-    margin: 20px auto 50px;
-    width: 60%;
+    width: 300px;
     border-radius: 5px;
-    height: 24px;
+    height: 30px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 30px;
+    position: fixed;
+    z-index: 1;
+    background-image: linear-gradient(black 30%, transparent);
+}
+
+.navbar .logo {
+    width: 200px;
+    height: 60px;
+}
+
+.navbar .input-field {
+    margin-top: 5px;
+    padding-left: 10px;
+    color: #1c2b32;
+    font-size: 14px;
+}
+
+::placeholder {
+    color: #1c2b32;
+    font-size: 14px;
 }
