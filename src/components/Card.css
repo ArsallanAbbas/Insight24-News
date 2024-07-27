@@ -6,8 +6,8 @@
     background: linear-gradient(black 20%, transparent);
     border-radius: 10px;
     box-shadow: 5px 5px 10px #000000;
-    color: rgb(215, 215, 215);
-    padding: 15px;
+    color: #D2D5D7;
+    padding: 15px 15px 0;
 }
 
 .card h2 {
@@ -20,9 +20,21 @@
     overflow: hidden;
 }
 
-.card h2, .card p {
+.card h2 {
     margin-bottom: 15px;
 }
 
-.card 
+.card p {
+    margin-bottom: 25px;
+}
+
+.button {
+    width: fit-content;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    padding: 2px 6px;
+    background-color: #89939C;
+    color: #1D2B33;
+    font-weight: 600;
+}
 

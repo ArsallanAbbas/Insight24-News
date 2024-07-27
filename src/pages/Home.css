@@ -8,7 +8,12 @@
 }
 
 .hero {
-    color: rgb(215, 215, 215);
+    color: #D2D5D7;
     padding-top: 130px;
     text-align: center;
+    font-size: 24px;
+}
+
+.hero h1  span{
+    background: linear-gradient(transparent 80%, #89939C 80% 95%, transparent 95%);
 }

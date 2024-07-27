@@ -11,25 +11,27 @@ const Home = () => {
   const[searchValue, setSearchValue] = useState("bitcoin")
   const[pageSize, setPageSize] = useState(20)
   const[infiniteScrool, setInfiniteScrool] = useState(false)
+
+  const apiKey = import.meta.env.VITE_API_KEY;
+  const baseUrl = `https://newsapi.org/v2/everything?`
   
   useEffect(() => {
     if(searchValue in localStorage & !infiniteScrool) {
       setData(JSON.parse(localStorage.getItem(searchValue)))
-    } else {
-      axios.get(`https://newsapi.org/v2/everything?q=${searchValue}&pageSize=${pageSize}&apiKey=dda5454b0f6a4a09a8a4099848ce8cc6`)
+    } 
+    
+    else {
+      axios.get(`${baseUrl}q=${searchValue}&pageSize=${pageSize}&apiKey=${apiKey}`)
         .then((res) => {
-          console.log(res)
           setData(res.data.articles)
           localStorage.setItem(searchValue, JSON.stringify(res.data.articles))
           setInfiniteScrool(false)
-          console.log(JSON.parse(localStorage.getItem(searchValue)).length)
         })
         .catch((err) => {
-          toast.error(err.response.data.message, {
-            position: "top-center",
-            autoClose: false,
-          })
-        })}
+          console.log(err)
+          toast.error(err.response? err.response.data.message: err.message)
+        })
+      }
 
     const handleScroll = (e) => {
       const scrollHeight = e.target.documentElement.scrollHeight;
@@ -48,14 +50,16 @@ const Home = () => {
     <>
       <SearchBar setSearchValue={setSearchValue} setPageSize={setPageSize} />
       <div className='hero'>
-        <h1>News That Matters, 24/7. Stay Connected <br/> with Insight.</h1>
+        <h1><span>News That Matters, 24/7. Stay Connected <br/> With Insight.</span></h1>
       </div>
       <div className='card-grid'>
         {data.map((item, index) => (
             <Card key={index} item={item}/>
         ))}
       </div>
-      <ToastContainer />
+      <ToastContainer 
+        position="top-center"
+        autoClose={false} />
     </>
   )
 }
