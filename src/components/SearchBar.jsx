@@ -7,6 +7,7 @@ const SearchBar = ({setSearchValue, setPageSize}) => {
 
   function handleSubmit (e) {
     e.preventDefault();
+    window.scrollTo(0 , 0)
     setSearchValue(input);
     setInput("");
     setPageSize(input in localStorage? JSON.parse(localStorage.getItem(input)).length: 20)

@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css"
 
 const Home = () => {
   const[data, setData] = useState([])
-  const[searchValue, setSearchValue] = useState("bitcoin")
+  const[searchValue, setSearchValue] = useState("Pakistan")
   const[pageSize, setPageSize] = useState(20)
   const[infiniteScrool, setInfiniteScrool] = useState(false)
 
